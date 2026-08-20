@@ -6,7 +6,6 @@ import {
   PlasmicRootProvider,
 } from "@plasmicapp/loader-nextjs";
 import type { GetStaticPaths, GetStaticProps } from "next";
-
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { PLASMIC } from "@/plasmic-init";
@@ -55,7 +54,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
       <PlasmicComponent component={pageMeta.displayName} />
     </PlasmicRootProvider>
   );
- 
+
+  return {
+    props: {
+      plasmicData,
+      queryCache,
+    },
+  };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -66,6 +71,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         catchall: mod.path.substring(1).split("/"),
       },
     })),
-    fallback: "false",
+    fallback: false,
   };
 }
