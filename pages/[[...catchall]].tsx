@@ -55,8 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       <PlasmicComponent component={pageMeta.displayName} />
     </PlasmicRootProvider>
   );
-  // Use revalidate if you want incremental static regeneration
-  return { props: { plasmicData, queryCache }, revalidate: 60 };
+ 
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -67,6 +66,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         catchall: mod.path.substring(1).split("/"),
       },
     })),
-    fallback: "blocking",
+    fallback: "false",
   };
 }
