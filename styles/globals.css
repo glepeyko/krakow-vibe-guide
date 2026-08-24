@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Cygre-Black';
+  src: url('/fonts/Cygre-Black.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cygre-ExtraBold';
+  src: url('/fonts/Cygre-ExtraBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cygre-SemiBold';
+  src: url('/fonts/Cygre-SemiBold.woff') format('woff');
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
